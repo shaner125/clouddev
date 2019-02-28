@@ -1,5 +1,19 @@
 source 'https://rubygems.org'
 
+#Testing framework
+gem 'rspec-rails', '~> 3.6'
+# gem for adding sample data
+gem 'factory_girl_rails'
+# for testing requests and responses
+gem 'rails-controller-testing'
+# add support for headless drivers (poltergeist)
+gem 'headless'
+#gem to simulate user interaction with app
+gem 'capybara'
+#adds javascript support for testing
+gem 'poltergeist'
+# gem to clean database after tests take place
+gem 'database_cleaner'
 gem 'bootstrap_form'
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
