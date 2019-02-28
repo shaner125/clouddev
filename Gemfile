@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'puma'
 #Testing framework
 gem 'rspec-rails', '~> 3.6'
 # gem for adding sample data
