@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# gem for generating dummy text
+gem 'faker'
+# necessary for capybara to run
 gem 'puma'
 #Testing framework
 gem 'rspec-rails', '~> 3.6'
