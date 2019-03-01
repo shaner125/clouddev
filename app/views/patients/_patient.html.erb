@@ -1,0 +1,15 @@
+<div class="col-sm-3 single-post-card" id=<%= patient_path(patient.id) %>>
+  <div class="card">
+    <div class="card-block">
+      <h4 class="post-text">
+        <%= truncate(patient.name, :length => 60) %>
+      </h4>
+      <div class="post-content">
+        <div class="posted-by">Posted by <%= patient.user.name %></div>
+        <p>DOB: <%= patient.date_of_birth %></p>
+        <p>Address: <%= patient.address %></p>
+        <%= link_to "View Full Patient Card", patient_path(patient.id), class: 'interested' %>
+      </div>
+    </div>
+  </div><!-- card -->
+</div><!-- col-sm-3 -->

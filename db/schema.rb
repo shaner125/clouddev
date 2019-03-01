@@ -27,9 +27,15 @@ ActiveRecord::Schema.define(version: 20190301005628) do
   add_index "patientnotes", ["patient_id"], name: "index_patientnotes_on_patient_id", using: :btree
 
   create_table "patients", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "date_of_birth"
+    t.string   "address"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
+
+  add_index "patients", ["user_id"], name: "index_patients_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
