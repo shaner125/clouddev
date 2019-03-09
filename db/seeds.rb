@@ -24,7 +24,12 @@ def seed_patients
     name = ['Jim', 'Bob', 'Alice', 'Jennifer' , 'Maggy', 'Paul', 'Rodriguez']
     
     name.each do |name|
-        Patient.create(name: name, date_of_birth: '22/05/1990', address: '123 Fake Street')
+        Patient.create(
+          name: name, 
+          date_of_birth: '22/05/1990', 
+          address: '123 Fake Street',
+          user_id: rand(1..9)
+          )
     end
 end
 

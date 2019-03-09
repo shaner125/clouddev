@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
     def index
-        @patients = Patient.limit(5)
+        @patients = Patient.where(user_id: current_user.id)
     end
 end
