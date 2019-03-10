@@ -1,12 +1,12 @@
 $(document).on('turbolinks:load', function() {
     if ($(".single-post-card").length) {
-        // set a solid border color style
+        // set a border color style
             $(".single-post-card").each(function() {
                 $(this).addClass("border-color-mode");
                 $(this).css('border', '5px solid ' + randomColor());
             });
-        }	
-    
+        	
+    }
 
 
     $('#feed').on( 'mouseenter', '.single-post-list', function() {
