@@ -8,8 +8,12 @@ end
   get 'login', to: 'devise/sessions#new'
 end
 
-resources :patients do
-end
+
+  resources :patients do
+  end
+  
+  resources :patientnotes do
+  end
 
   devise_for :users, :controllers => {:registrations => "registrations"}
   root to: 'pages#index'

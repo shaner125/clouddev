@@ -17,11 +17,12 @@ ActiveRecord::Schema.define(version: 20190301005628) do
   enable_extension "plpgsql"
 
   create_table "patientnotes", force: :cascade do |t|
+    t.string   "date"
     t.string   "title"
     t.text     "content"
     t.integer  "patient_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "patientnotes", ["patient_id"], name: "index_patientnotes_on_patient_id", using: :btree

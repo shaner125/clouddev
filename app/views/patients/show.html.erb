@@ -1,3 +1,4 @@
+<%= render 'patientnotes/modal' %>
 <div id="single-post-content" class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
@@ -7,4 +8,10 @@
        <p><%= @patient.address %></p>
     </div>
   </div><!-- row -->
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h3>Patient Notes:</h3>
+      <%= render @patientnotes %>
+    </div>
+  </div>
 </div>
