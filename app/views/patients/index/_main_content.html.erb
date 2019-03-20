@@ -1,5 +1,10 @@
 <div id="main-content" class="col-sm-9">
     <h1>All Current Patients:</h1>
+  <div class="row">
+    <%= render  'patients/index/search_form', 
+                search_placeholder: "Search for specific patient by name" %>
+ </div><!-- row -->
+
   <%= render @allpatients %>
   <div class="infinite-scroll">
     <%= will_paginate @allpatients %>
