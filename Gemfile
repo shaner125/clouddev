@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+
+# gem for allowing pagination when patient/patient notes > 30
+gem 'will_paginate', '~> 3.1.0'
 # gem for generating dummy text
 gem 'faker'
 # necessary for capybara to run

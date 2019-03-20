@@ -1,0 +1,7 @@
+<div id="main-content" class="col-sm-9">
+    <h1>All Current Patients:</h1>
+  <%= render @allpatients %>
+  <div class="infinite-scroll">
+    <%= will_paginate @allpatients %>
+  </div>
+</div><!-- main-content -->
