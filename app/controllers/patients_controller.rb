@@ -12,5 +12,14 @@ class PatientsController < ApplicationController
     
     def get_patients
         Patient.limit(20).all
+        
+        search = params[:search]
+        
+          if search.blank?
+            patients = Patient.limit(20).all
+          elsif search.present?
+            patients = Patient.search(search)
+          else
+          end
     end
 end

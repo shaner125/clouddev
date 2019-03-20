@@ -12,3 +12,11 @@ RSpec.describe Patient, type: :model do
     end
   end
 end
+
+context 'Scopes' do
+  it 'default_scope orders by descending created_at' do
+    first_post = create(:patient)
+    second_post = create(:patient)
+    expect(Post.all).to eq [second_patient, first_patient]
+  end
+end
