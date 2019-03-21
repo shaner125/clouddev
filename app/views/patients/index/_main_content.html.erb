@@ -4,9 +4,12 @@
     <%= render  'patients/index/search_form', 
                 search_placeholder: "Search for specific patient by name" %>
  </div><!-- row -->
-
-  <%= render @allpatients %>
-  <div class="infinite-scroll">
-    <%= will_paginate @allpatients %>
+<div class="row">
+    <div class="col-sm-12" id="feed">
+      <%= render @patients %>
+      <div class="infinite-scroll">
+        <%= will_paginate @patients %>
+      </div>
+    </div>
   </div>
 </div><!-- main-content -->

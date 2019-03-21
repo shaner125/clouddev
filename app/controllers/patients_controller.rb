@@ -5,18 +5,20 @@ class PatientsController < ApplicationController
     end
     
     def index
-        @allpatients = get_patients.paginate(page: params[:page])
+        @patients = get_patients.paginate(page: params[:page])
+        respond_to do |format|
+          format.html
+          format.js { render partial: 'patients/patients_pagination_page' }
+        end
     end
     
     private
     
     def get_patients
-        Patient.limit(20).all
-        
         search = params[:search]
         
           if search.blank?
-            patients = Patient.limit(20).all
+            patients = Patient.limit(30)
           elsif search.present?
             patients = Patient.search(search)
           else

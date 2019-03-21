@@ -15,7 +15,7 @@ def seed_patients
   users = User.all
 
   users.each do |user|
-    3.times do
+    10.times do
       Patient.create!(
         name: Faker::Name.name,
         date_of_birth: Faker::Date.birthday(18, 65),

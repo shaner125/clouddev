@@ -12,4 +12,22 @@ require 'rails_helper'
 # end
 RSpec.describe PatientsHelper, type: :helper do
   pending "add some examples to (or delete) #{__FILE__}"
+  
+  context '#update_pagination_partial_path' do
+  it "returns an update_pagination partial's path" do
+    patients = double('allpatients', :next_page => 2)
+    assign(:posts, posts)
+    expect(helper.update_pagination_partial_path).to(
+      eq 'posts/posts_pagination_page/update_pagination'
+    )
+  end
+
+  it "returns a remove_pagination partial's path" do
+    posts = double('posts', :next_page => nil)
+    assign(:posts, posts)
+    expect(helper.update_pagination_partial_path).to(
+      eq 'posts/posts_pagination_page/remove_pagination'
+    )
+  end
+end
 end
