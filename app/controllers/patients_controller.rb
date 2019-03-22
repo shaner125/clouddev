@@ -12,16 +12,29 @@ class PatientsController < ApplicationController
         end
     end
     
+    def new
+      @patient = Patient.new
+    end
+
+    def create
+      @patient = Patient.new(patient_params)
+      if @patient.save 
+        redirect_to patient_path(@patient) 
+      else
+        redirect_to root_path
+      end
+    end
+      
     private
     
+    def post_params
+      params.require(:patient).permit(:name, :date_of_birth, :address)
+                           .merge(user_id: current_user.id)
+    end
+    
     def get_patients
-        search = params[:search]
-        
-          if search.blank?
-            patients = Patient.limit(30)
-          elsif search.present?
-            patients = Patient.search(search)
-          else
-          end
+      AllPatientsService.new({
+      search: params[:search]
+      }).call
     end
 end
