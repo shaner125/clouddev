@@ -1,0 +1,18 @@
+<%= bootstrap_form_for([@patient, @patientnote]) do |f| %>
+<%= f.hidden_field :date, :value => Time.now.strftime("%d/%m/%Y") %>
+  <%= f.text_field  :title, 
+                    maxlength: 50, 
+                    placeholder: 'Enter Title', 
+                    class: 'form-control',
+                    required: true, 
+                    minlength: 5,
+                    maxlength: 100 %>
+  <%= f.text_area :content, 
+                  rows: 6,
+                  required: true, 
+                  minlength: 20,
+                  maxlength: 1000,
+                  placeholder: 'Enter Details..', 
+                  class: 'form-control' %>
+  <%= f.submit "Submit", class: 'form-control' %>
+<% end %>

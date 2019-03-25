@@ -1,4 +1,4 @@
-<div class="col-sm-3 single-post-card" id=<%= patientnote_path(patientnote.id) %>>
+<div class="col-sm-3 single-post-card" id=<%= patient_patientnotes_path(@patient, patientnote)%>>
   <div class="card">
     <div class="card-block">
       <h4 class="post-text">
@@ -11,6 +11,8 @@
         <div class="content">
          <%= patientnote.content%>
         </div>
+         <%= link_to 'Destroy', patient_patientnote_path(@patient, patientnote.id), :confirm => 'Are you sure?', :method => :delete , class: 'delete_button' %>
+         <%= link_to 'Edit', edit_patient_patientnote_path(@patient, patientnote.id), class: 'edit_button' %>
         </div>
       </div>
   </div><!-- card -->

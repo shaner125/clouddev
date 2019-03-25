@@ -1,23 +1,38 @@
 .modal-content {
-  .dob, .address {
+  .dob, .address, .title, .content {
     margin: 10px 0;
   }
 }
 
 .modal-content {
   .loaded-data {
-    .dob, .address {
+    .dob, .address, .title, .content {
       overflow: hidden;
     }
     padding: 0 10px;
   }
 }
 
-.view_info {
+.view_info, .edit_button {
   text-align: center;
   padding: 10px;
   a {
     background-color: $navbarColor;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+}
+
+.delete_button {
+  text-align: center;
+  padding: 10px;
+  a {
+    background-color: red;
     padding: 10px;
     color: white;
     border-radius: 10px;

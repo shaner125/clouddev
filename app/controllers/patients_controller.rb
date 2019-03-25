@@ -24,10 +24,33 @@ class PatientsController < ApplicationController
         redirect_to root_path
       end
     end
+    
+    def edit
+    @patient = Patient.find(params[:id])
+    end
+
+
+  def update
+  @patient = Patient.find(params[:id])
+  if @patient.update_attributes(params.require(:patient).permit(:name, :date_of_birth, :address))
+  redirect_to patient_path(@patient)
+  else
+  render :action => "edit"
+  end
+  end
+
+  def destroy
+  @patient = Patient.find(params[:id])
+  @patient.destroy
+  respond_to do |format|
+  format.html { redirect_to root_path}
+  format.xml { head :ok }
+  end
+  end
       
     private
     
-    def post_params
+    def patient_params
       params.require(:patient).permit(:name, :date_of_birth, :address)
                            .merge(user_id: current_user.id)
     end

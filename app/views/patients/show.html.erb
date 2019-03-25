@@ -1,17 +1,7 @@
 <%= render 'patientnotes/modal' %>
-<div id="single-post-content" class="container">
+<div class="container">
   <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-      <div class="posted-by">Doctor: <%= @patient.user.name %></div>
-      <h3><%= @patient.name %></h3>
-      <p><%= @patient.date_of_birth %></p>
-       <p><%= @patient.address %></p>
-    </div>
+  <%= render 'patients/show/side_menu' %>
+  <%= render 'patients/show/main_content' %>
   </div><!-- row -->
-  <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-      <h3>Patient Notes:</h3>
-      <%= render @patientnotes %>
-    </div>
-  </div>
-</div>
+</div><!-- container -->

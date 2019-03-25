@@ -1,0 +1,11 @@
+<%= render 'patientnotes/modal' %>
+<div id="single-post-content" class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="posted-by">Patient: <%= @patientnote.patient.name %></div>
+      <h3>Date: <%= @patientnote.date %></h3>
+      <h3>Title: <%= @patientnote.title %></h3>
+      <p>Content: <%= @patientnote.content %></p>
+    </div>
+  </div><!-- row -->
+</div>

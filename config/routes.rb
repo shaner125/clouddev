@@ -10,11 +10,9 @@ end
 
 
   resources :patients do
+    resources :patientnotes
   end
   
-  resources :patientnotes do
-  end
-
   devise_for :users, :controllers => {:registrations => "registrations"}
   root to: 'pages#index'
   

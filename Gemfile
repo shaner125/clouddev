@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+# gem re-introducing observer pattern to ActiveRecord
+gem 'rails-observers'
 # gem for allowing pagination when patient/patient notes > 30
 gem 'will_paginate', '~> 3.1.0'
 # gem for generating dummy text

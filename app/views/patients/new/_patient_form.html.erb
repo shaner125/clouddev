@@ -1,0 +1,24 @@
+<%= bootstrap_form_for(@patient) do |f| %>
+  <%= f.text_field  :name, 
+                    maxlength: 50, 
+                    placeholder: 'Patient Name', 
+                    class: 'form-control',
+                    required: true, 
+                    minlength: 5,
+                    maxlength: 100 %>
+  <%= f.text_field  :date_of_birth, 
+                    maxlength: 50, 
+                    placeholder: 'Patient Date of Birth', 
+                    class: 'form-control',
+                    required: true, 
+                    minlength: 5,
+                    maxlength: 100 %>
+  <%= f.text_field  :address, 
+                    maxlength: 50, 
+                    placeholder: 'Patient Address', 
+                    class: 'form-control',
+                    required: true, 
+                    minlength: 5,
+                    maxlength: 100 %>
+  <%= f.submit "Submit", class: 'form-control' %>
+<% end %>

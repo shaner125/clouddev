@@ -3,8 +3,13 @@
     <i class="fa fa-user-circle-o" aria-hidden="true"></i> View my Patients
   <% end %>
 </li>
-<li id="hobby">
+<li id="home">
   <%= link_to patients_path do %>
     <i class="fa fa-user-circle-o" aria-hidden="true"></i> View all Patients
+  <% end %>
+</li>
+<li id="home">
+  <%= link_to new_patient_path do %>
+    <i class="fa fa-plus-circle" aria-hidden="true"></i> Add New Patient
   <% end %>
 </li>
