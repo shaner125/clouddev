@@ -13,6 +13,9 @@ class PatientsController < ApplicationController
     end
     
     def new
+      unless current_user.admin?
+        redirect_to root_path, :alert => "Only Administration staff can add patients!"
+      end
       @patient = Patient.new
     end
 
@@ -40,6 +43,9 @@ class PatientsController < ApplicationController
   end
 
   def destroy
+    unless current_user.admin?
+        redirect_to root_path, :alert => "Only Administration staff can delete patients!"
+    end
   @patient = Patient.find(params[:id])
   @patient.destroy
   respond_to do |format|
@@ -51,8 +57,7 @@ class PatientsController < ApplicationController
     private
     
     def patient_params
-      params.require(:patient).permit(:name, :date_of_birth, :address)
-                           .merge(user_id: current_user.id)
+      params.require(:patient).permit(:name, :date_of_birth, :address, :user_id)
     end
     
     def get_patients

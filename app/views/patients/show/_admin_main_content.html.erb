@@ -5,13 +5,6 @@
       <p><%= @patient.date_of_birth %></p>
        <p><%= @patient.address %></p>
   </div><!-- row -->
-  <div class="row">
-      <div class="new-patientnote-button-parent">
-          <%= link_to "Add new patient note", 
-                      new_patient_patientnote_path(@patient), 
-                      :class => "new-patientnote-button" %>
-      </div>
-    </div>
     <div class="row">
       <h3>Patient Notes:</h3>
       <%= render @patientnotes %>

@@ -1,7 +1,7 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :patientnote do
     sequence(:title) { |n| "title#{n}" }
-    content 'a' * 20
+    sequence(:content) { |n| content 'a' * 20 }
     patient
   end
 end

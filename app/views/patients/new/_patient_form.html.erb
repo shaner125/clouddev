@@ -1,4 +1,5 @@
 <%= bootstrap_form_for(@patient) do |f| %>
+  <%= f.select :user_id, User.where(role: '0').collect {|p| [ p.name, p.id ] } %>
   <%= f.text_field  :name, 
                     maxlength: 50, 
                     placeholder: 'Patient Name', 

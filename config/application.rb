@@ -23,5 +23,7 @@ module Workspace
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     config.action_controller.include_all_helpers = false
+    config.active_record.observers = :patient_observer
+    config.autoload_paths += %W(#{config.root}/lib)
   end
 end

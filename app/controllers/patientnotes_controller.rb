@@ -17,6 +17,9 @@ class PatientnotesController < ApplicationController
   end
 
   def create
+    unless current_user.doctor?
+        redirect_to root_path, :alert => "Only Doctor Staff can add patients patient notes!"
+    end
     @patient = Patient.find(params[:patient_id])
     @patientnote = @patient.patientnotes.new(patientnote_params)
     if @patientnote.save 

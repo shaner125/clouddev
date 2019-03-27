@@ -5,7 +5,22 @@ def seed_users
       name: "Dr. #{user_id}",
       email: "test#{user_id}@test.com",
       password: 'password',
-      password_confirmation: 'password'
+      password_confirmation: 'password',
+      role: 'doctor'
+    )
+    user_id = user_id + 1
+  end
+end
+
+def seed_admin
+  user_id = 11
+  5.times do 
+    User.create(
+      name: "Admin. #{user_id-10}",
+      email: "admin#{user_id-10}@test.com",
+      password: 'password',
+      password_confirmation: 'password',
+      role: 'admin'
     )
     user_id = user_id + 1
   end
@@ -45,5 +60,6 @@ end
 
 
 seed_users
+seed_admin
 seed_patients
 seed_patientnotes

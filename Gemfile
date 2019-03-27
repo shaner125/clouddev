@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+#custom built gem for retrieving RSS feeds
+gem 'medlife_data'
 # gem re-introducing observer pattern to ActiveRecord
 gem 'rails-observers'
 # gem for allowing pagination when patient/patient notes > 30
@@ -11,7 +13,7 @@ gem 'puma'
 #Testing framework
 gem 'rspec-rails', '~> 3.6'
 # gem for adding sample data
-gem 'factory_girl_rails'
+gem 'factory_bot_rails'
 # for testing requests and responses
 gem 'rails-controller-testing'
 # add support for headless drivers (poltergeist)
