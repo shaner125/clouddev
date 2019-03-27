@@ -9,12 +9,13 @@ end
   get 'login', to: 'devise/sessions#new'
 end
 
-
   resources :patients do
     resources :patientnotes
   end
   
   devise_for :users, :controllers => {:registrations => "registrations"}
   root to: 'pages#index'
+  
+get '/news' => 'news#index'  
   
 end
