@@ -27,7 +27,7 @@ gem 'database_cleaner'
 gem 'bootstrap_form'
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
+gem 'rails'
 # Use postgresql as the database for Active Record
 group :development, :test do
 gem 'sqlite3', '~> 1.3.6'
