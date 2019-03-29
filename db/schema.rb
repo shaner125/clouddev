@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20190326163805) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "notifications", force: :cascade do |t|
     t.string   "comment"
     t.integer  "user_id"
@@ -23,7 +20,7 @@ ActiveRecord::Schema.define(version: 20190326163805) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "notifications", ["user_id"], name: "index_notifications_on_user_id", using: :btree
+  add_index "notifications", ["user_id"], name: "index_notifications_on_user_id"
 
   create_table "patientnotes", force: :cascade do |t|
     t.string   "date"
@@ -34,7 +31,7 @@ ActiveRecord::Schema.define(version: 20190326163805) do
     t.datetime "updated_at"
   end
 
-  add_index "patientnotes", ["patient_id"], name: "index_patientnotes_on_patient_id", using: :btree
+  add_index "patientnotes", ["patient_id"], name: "index_patientnotes_on_patient_id"
 
   create_table "patients", force: :cascade do |t|
     t.string   "name"
@@ -45,7 +42,7 @@ ActiveRecord::Schema.define(version: 20190326163805) do
     t.datetime "updated_at"
   end
 
-  add_index "patients", ["user_id"], name: "index_patients_on_user_id", using: :btree
+  add_index "patients", ["user_id"], name: "index_patients_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -59,8 +56,7 @@ ActiveRecord::Schema.define(version: 20190326163805) do
     t.integer  "role"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
-  add_foreign_key "notifications", "users"
 end
