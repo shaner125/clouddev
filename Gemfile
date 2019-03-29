@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 #custom built gem for retrieving RSS feeds
-gem 'medigem'
+gem 'medigem', :git => "git://github.com/shaner125/medigem"
 # gem re-introducing observer pattern to ActiveRecord
 gem 'rails-observers'
 # gem for allowing pagination when patient/patient notes > 30
@@ -19,7 +19,7 @@ gem 'rails-controller-testing'
 # add support for headless drivers (poltergeist)
 gem 'headless'
 #gem to simulate user interaction with app
-gem 'capybara'
+gem 'capybara', '~> 3.15.0'
 #adds javascript support for testing
 gem 'poltergeist'
 # gem to clean database after tests take place

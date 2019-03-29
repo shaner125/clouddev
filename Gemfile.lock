@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/shaner125/medigem
+  revision: ecb337991eba625e5e32c70804d078aba77f007c
+  specs:
+    medigem (0.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -105,7 +111,6 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
-    medigem (0.0.0)
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
@@ -231,7 +236,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   bootstrap_form
   byebug
-  capybara
+  capybara (~> 3.15.0)
   coffee-rails (~> 4.1.0)
   database_cleaner
   devise
@@ -240,7 +245,7 @@ DEPENDENCIES
   headless
   jbuilder (~> 2.0)
   jquery-rails
-  medigem
+  medigem!
   pg (~> 0.15)
   poltergeist
   puma
