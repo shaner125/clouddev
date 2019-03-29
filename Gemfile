@@ -29,11 +29,12 @@ gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use postgresql as the database for Active Record
-group :development do
-  gem 'sqlite3', '~> 1.3.6'
+group :development, :test do
+gem 'sqlite3', '~> 1.3.6'
 end
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
