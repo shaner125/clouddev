@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 #custom built gem for retrieving RSS feeds
-gem 'medlife_data'
+gem 'medigem'
 # gem re-introducing observer pattern to ActiveRecord
 gem 'rails-observers'
 # gem for allowing pagination when patient/patient notes > 30

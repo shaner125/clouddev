@@ -1,4 +1,9 @@
 <div id="main-content" class="col-sm-9">
+    <% unless @notifications.empty? %>
+    <h3>Notifications:</h3>
+  <%= render @notifications %>
+  <%= link_to 'Clear All:', remove_all_notifications_path, method: :get %>
+    <% end %>
     <h1>My Patients:</h1>
   <%= render @patients %>
 </div><!-- main-content -->

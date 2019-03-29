@@ -3,5 +3,6 @@ class PagesController < ApplicationController
         @patients = Patient.where(user_id: current_user.id)
         @doctors = User.where(role: '0')
         @admins = User.where(role: '1')
+        @notifications = Notification.where(user_id: current_user.id)
     end
 end

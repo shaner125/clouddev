@@ -35,7 +35,7 @@ class PatientsController < ApplicationController
 
   def update
   @patient = Patient.find(params[:id])
-  if @patient.update_attributes(params.require(:patient).permit(:name, :date_of_birth, :address))
+  if @patient.update_attributes(params.require(:patient).permit(:name, :date_of_birth, :address, :user_id))
   redirect_to patient_path(@patient)
   else
   render :action => "edit"

@@ -2,15 +2,16 @@
   <div class="card">
     <div class="card-block">
       <h4 class="post-text">
-        <%= news.title %>
+        <%= news[:title] %>
       </h4>
       <div class="post-content">
-        <div class="dob">
-          Date Published: <%= news.date %>
+        <div class="date">
+          <%= news[:date] %>
         </div>
-        <div class="address">
-          Link: <%= news.link %>
+        <div class="description">
+          <%= news[:description] %>
           </div>
+          <%= link_to "Go to full article", news[:link] , class: 'view_info' %>
         </div>
       </div>
   </div><!-- card -->

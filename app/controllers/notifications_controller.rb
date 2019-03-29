@@ -60,6 +60,13 @@ class NotificationsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def remove_all
+   @notifications = Notification.where(user_id: current_user.id)
+   @notifications.delete_all
+   flash[:notice] = "You have removed all notifications!"
+  redirect_to root_path
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function() {
   // when a patient is clicked, show its full content in a modal window
-  $("body").on( "click", ".single-post-card, .single-post-list", function() {
+  $("body").on( "click", ".single-post-card", function() {
     var h4 = $(this).find('.card .card-block .post-text').html();
     var dob = $(this).find('.post-content .dob ').html();
     var address = $(this).find('.post-content .address ').html();
